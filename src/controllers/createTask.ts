@@ -1,3 +1,7 @@
+import { Request, Response } from "express";
+import { Task, tasks } from "../models/taskModel";
+
+
 export const createTask = (req: Request, res: Response) => {
   try {
     const { title, completed } = req.body;
