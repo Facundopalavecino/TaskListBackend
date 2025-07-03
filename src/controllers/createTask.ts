@@ -1,8 +1,12 @@
 import { Request, Response } from "express";
 import { Task, tasks } from "../models/taskModel";
 
+type TaskBody = {
+  title: string;
+  completed?: boolean;
+};
 
-export const createTask = (req: Request, res: Response) => {
+export const createTask = (req: Request<{}, {}, TaskBody>, res: Response) => {
   try {
     const { title, completed } = req.body;
 
