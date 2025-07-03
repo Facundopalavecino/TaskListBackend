@@ -3,12 +3,15 @@ import cors from "cors";
 import taskRoutes from "./routes/taskRoutes";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://task-list-frontend-one.vercel.app"
+
+}));
 app.use(express.json());
 
-app.use("/api", taskRoutes);  // 👈 todas las rutas van a /api
+app.use("/api", taskRoutes); 
 
 app.get("/", (req, res) => {
   res.send("✅ API REST de Tareas funcionando correctamente 🚀");
