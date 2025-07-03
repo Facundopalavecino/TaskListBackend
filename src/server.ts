@@ -5,11 +5,8 @@ import taskRoutes from "./routes/taskRoutes";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-/*app.use(cors({
-  origin: "https://task-list-frontend-one.vercel.app"
-
-}));*/
 app.use(cors());
+
 app.use(express.json());
 
 app.use("/api", taskRoutes); 
