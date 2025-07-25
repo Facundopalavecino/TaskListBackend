@@ -5,10 +5,13 @@ import taskRoutes from "./routes/taskRoutes";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: ["https://task-list-frontend-one.vercel.app/", "http://localhost:5173"]
-}));
+app.listen(PORT, () =>{
+  console.log(`Servidor escuchando en puerto ${PORT}`);
+});
 
+/*app.use(cors({
+  origin: ["https://task-list-frontend-one.vercel.app/", "http://localhost:5173"]
+}));*/
 
 app.use(express.json());
 
